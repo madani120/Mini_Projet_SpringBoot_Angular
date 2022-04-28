@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Modifier produit </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Nom</label>
+            <input type="text" class ="form-control" id = "nom"
+                [(ngModel)] = "produit.nom" name = "nom" >
+        </div>
+    
+        <div class="form-group">
+            <label> Prix unitaire</label>
+            <input type="number" class ="form-control" id = "prix_uni"
+                [(ngModel)] = "produit.prix_uni" name = "prix_uni" min="0" >
+        </div>
+    
+        <div class="form-group">
+            <label> Quantité</label>
+            <input type="number" class ="form-control" id = "qte"un
+                [(ngModel)] = "produit.qte" name = "qte" min="0">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

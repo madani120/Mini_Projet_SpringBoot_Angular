@@ -1,0 +1,32 @@
+<h2>Liste des Produits</h2>
+
+<div class="input-group">
+    <div class="form-outline">
+      <input type="search" id="form1" class="form-control" [(ngModel)]="searchText" placeholder="Rechercher par Nom" />
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prix unitaire</th>
+            <th>Quantité</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let produit of produits | search:searchText ">
+            <td>{{produit.nom}}</td>
+            <td>{{produit.prix_uni}}</td>
+            <td>{{produit.qte}}</td>
+            <td>
+                <button (click) ="updateProduit(produit.id)" class="btn btn-info">Modifier</button>
+                <button (click) ="deleteProduit(produit.id)" class="btn btn-danger"style="margin-left: 10px">Supprimer</button>
+                <button (click) = "produitDetails(produit.id)" class = "btn btn-info" style="margin-left: 10px">Afficher</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
